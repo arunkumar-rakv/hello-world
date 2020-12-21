@@ -1,0 +1,42 @@
+<h1>Title Component --- Start</h1>
+
+<p>title works!</p>
+<p>{{1+2}}</p>
+<p>{{titleName.length}}</p>
+<p [id]="titleId" [class]="titleClass">{{titleName}}</p>
+<p [class.text-blue]="isBlue">{{titleName}}</p>
+<p [ngClass]="titleClasses">{{titleName}}</p>
+<p #title [style.color]="'red'">{{titleName}}</p>
+<button (click)="onClick($event)">Button</button>
+<button (click)="onPress(title.text)">Button</button>
+<div>
+<input type="text" [(ngModel)]="inputValue">
+<p>From input: {{inputValue}}</p>
+</div>
+
+<div *ngIf="displayIf; then ifBlock; else elseBlock;"></div>
+<ng-template #ifBlock><p>IF Block</p></ng-template>
+<ng-template #elseBlock><p>ELSE Block</p></ng-template>
+
+<div [ngSwitch]="switchValue">
+    <p *ngSwitchCase="1">First</p>
+    <p *ngSwitchCase="2">Second</p>
+    <p *ngSwitchCase="3">Third</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
+
+<div *ngFor="let color of colorsList; index as i; first as f; last as l; odd as o; even as e;">
+    <p>Index: {{i}} , Value: {{color}}, First: {{f}} , Last: {{l}} , Odd: {{o}}, Even: {{e}}</p>
+</div>
+
+<div>
+    <h3>Component Interactions</h3>
+    <p>{{fromApp}}</p>
+    <button (click)="sendDataToParent()">Send Data</button>
+    <h5>Name List from App</h5>
+    <ul *ngFor="let name of nameList">
+        <li>ID: {{name.id}} , Name: {{name.name}}</li>
+    </ul>
+</div>
+
+<h1>Title Component --- End</h1>
