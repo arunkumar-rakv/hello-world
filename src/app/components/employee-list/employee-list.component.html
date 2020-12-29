@@ -1,8 +1,8 @@
-<h1>Employee Component --- End</h1>
+<h1>Employee Component --- Start</h1>
 <div>
     <h3>Employee List</h3>
     <ul *ngFor="let emp of empList">
-        <li>ID: {{emp.id}} , Name: {{emp.name}}</li>
+        <li (click)="onClick(emp)"><a>ID: {{emp.id}} , Name: {{emp.name}}</a></li>
     </ul>
 </div>
 <h1>Employee Component --- End</h1>

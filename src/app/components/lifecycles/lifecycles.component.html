@@ -1,0 +1,22 @@
+<p>{{message}}</p>
+<button (click)="onPress()" class="btn btn-primary">Press</button>
+<!-- <app-lifecycles-child>
+    <h1>Content Html from parent</h1>
+    <h3>Content Html from parent</h3>
+</app-lifecycles-child> -->
+
+<app-lifecycles-child>
+    <header #header>Header1</header>
+    <body #body>Body1</body>
+</app-lifecycles-child>
+
+<app-lifecycles-child>
+    <header #header>Header2</header>
+    <body #body>Body2</body>
+    <body #body>Body2</body>
+</app-lifecycles-child>
+
+<app-lifecycles-child>
+    <header #header>Header3</header>
+    <body #body>Body3</body>
+</app-lifecycles-child>

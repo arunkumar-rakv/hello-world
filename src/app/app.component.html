@@ -1,15 +1,19 @@
 <h1>App Component --- Start</h1>
 
-<span>{{ title }} app is running!</span>
+<p>{{ title }} app is running!</p>
 
-<div>{{message}}</div>
+<nav>
+    <a routerLink='/parent' routerLinkActive='active'>Parent</a>
+    <a routerLink='/employees' routerLinkActive='active'>Employee List</a>
+    <a routerLink='/pipes' routerLinkActive='active'>Pipes</a>
+    <a routerLink='/forms' routerLinkActive='active'>Forms</a>
+    <a routerLink='/lifecycles' routerLinkActive='active'>Lifecycles</a>
+    <a routerLink='/eager-loading' routerLinkActive='active'>Eager Loading</a>
+    <a routerLink='/lazy-loading' routerLinkActive='active'>Lazy Loading</a>
+    <a routerLink='/pre-loading' routerLinkActive='active'>Pre Loading</a>
 
-<div>{{viewChildValue}}</div>
+</nav>
 
-<app-title [fromApp]="title" (fromChild)="getDataFromChild($event)" [nameList]="nameList"></app-title>
-
-<app-employee-list></app-employee-list>
+<router-outlet></router-outlet>
 
 <h1>App Component --- End</h1>
-
-<app-pipes-try></app-pipes-try>

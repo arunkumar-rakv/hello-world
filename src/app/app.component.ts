@@ -1,37 +1,22 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { TitleComponent } from "./title/title.component";
-
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationStart, Event as NavigationEvent } from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  
   title = 'hello-world';
-  message = '';
-  viewChildValue = "";
-  nameList = [{
-    "id": 1,
-    "name": "AA"
-  }, {
-    "id": 2,
-    "name": "BB"
-  }, {
-    "id": 3,
-    "name": "CC"
-  }]
-  @ViewChild(TitleComponent, { static: true }) titleChild;
 
-
-
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.viewChildValue = this.titleChild.viewChildValue;
-  }
-
-  getDataFromChild($event) {
-    this.message=$event;
+    this.router.events.subscribe((event: NavigationEvent) => {
+      if(event instanceof NavigationStart) {
+        console.log("NavigationStart Event");
+      }
+    });
   }
 
 }

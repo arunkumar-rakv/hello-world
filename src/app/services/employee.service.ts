@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IEmployee } from './employee';
+import { IEmployee } from '../models/employee';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
 
-  private url: string = "https://jsonplaceholder.typicode.com/users";
+  private url: string = "http://jsonplaceholder.typicode.com/users";
 
   constructor( private httpClient: HttpClient ) { }
 

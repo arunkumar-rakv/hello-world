@@ -1,0 +1,8 @@
+nav a {
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+nav a.active {
+    color: chocolate;
+}
